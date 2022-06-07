@@ -1,0 +1,456 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0
+}
+.startContainer{
+  display: flex;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+
+}
+.Back{
+position: fixed;
+top: -10px;
+left: 20px;
+display: flex;
+align-items: center;
+text-decoration: none;
+font-size: 28px;
+padding: 0px 15px;
+border-radius:0  0 50% 50%;
+background-color: aliceblue;
+color: black;
+z-index: 3;
+font-weight: bold;
+transition: 0.6s;
+transform: translateY(-60%);
+}
+.Back:hover{
+  transform: translateY(0);
+}
+
+.Back h3{
+  margin-left: 10px;
+}
+.start-news{
+  background-color: aqua;
+}
+.setup-quiz{
+  background-color: rgb(212, 0, 255);
+}
+.start-game{
+  background-color: rgb(73, 84, 121);
+}
+.check-weather{
+background-color: blue;
+}
+.setup{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  border-right: 3px solid black;
+  justify-content: center;
+  align-items: center;
+  transition: .6s;
+  background-repeat: no-repeat;
+}
+.setup a{
+  text-decoration: none;
+  font-size: 40px;
+  color: black;
+  background-color: rgb(219, 152, 27);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.setup a:hover{
+  background-color: blanchedalmond;
+}
+.setup:hover{
+  width: 40%;
+}
+.setup:hover a{
+  transition: .6s;
+}
+.setup:hover a{
+  transform: scale(1.6);
+}
+.quizContainer{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.pinimg.com/originals/db/34/d4/db34d40b271fb59477621550bf73ea0b.jpg');
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+.quizContainer::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.4); 
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.quiz{
+  background-color: rgb(194, 218, 233);
+  text-align: center;
+  min-width: 400px;
+  max-width: 800px;
+  font-size: 20px;
+  height: auto;
+  padding: 10px 30px;
+  border-radius: 30px;
+  position: relative;
+}
+.quiz label{
+  text-align: left;
+  margin-left:10px;
+  margin-bottom: 5px;
+}
+.quiz form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.quiz form input{
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: 0;
+  font-size: 18px;
+  padding: 10px;
+}
+.quiz form select{
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: 0;
+  font-size: 18px;
+  padding: 10px;
+}
+.quiz form button{
+  margin: 20px auto;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+.answers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
+  width: 700px;
+  margin: 20px auto;
+}
+.answers button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px 20px;
+  width: 300px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.nextQuest{
+  padding: 6px 25px;
+  font-size: 20px;
+  border: 0;
+  color: white;
+  background-color: rgb(37, 66, 90);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.correct{
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 20px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 5px;
+}
+.modalContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.modalContent{
+  background-color: rgb(194, 218, 233);
+  height: auto;
+  padding: 10px 30px;
+  border-radius: 30px;
+  text-align: center;
+}
+.modalContent button{
+  padding: 6px 25px;
+  font-size: 20px;
+  border: 0;
+  color: white;
+  background-color: rgb(37, 66, 90);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.newsContainer{
+  margin: 50px auto;
+  width: 1900px;
+  text-align: center;
+}
+.newsHeader h1{
+font-size: 60px;
+margin-bottom: 20px;
+}
+.newsHeader form{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.newsHeader select{
+  height: 50px;
+  width: auto;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 10px;
+  border: 0;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: bisque;
+
+}
+.newsHeader input{
+font-size: 25px;
+padding: 7px 15px;
+border: 0;
+background-color: bisque;
+border-radius: 10px;
+}
+.newsHeader button{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background-color: rgb(175, 172, 167);
+}
+.newsHeader button:hover{
+  color: antiquewhite;
+}
+.newsList{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1900px;
+  margin: 100px auto;
+}
+.singleNews{
+  display: flex;
+  margin: 20px;
+  height: 350px;
+  padding: 15px;
+  width: 800px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: bisque;
+}
+.singleNews img{
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.newsInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 10px;
+}
+.newsDetails{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.newsDetails h4{
+margin-left:7px ;
+}
+.newsDetails a{
+margin-right: 20px;
+margin-left: 7px;
+}
+.loading{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.gameContainer{
+  height: 100vh;
+  background-image: url('http://s31955.pcdn.co/wp-content/uploads/2019/11/a-stadium.jpg');
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+.gameContainer::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.4); 
+   width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.score{
+  height: 9%;
+  display: flex;
+  justify-content: center;
+}
+.score h1{
+  margin: 10px 30px;
+  color: white;
+}
+.gameField{
+  height: 91%;
+  position: relative;
+  
+}
+
+.goal{
+  color: white;
+  position: absolute;
+  transition: .6s;
+  font-size:150px;
+  cursor: not-allowed;
+}
+.weatherContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(161, 197, 185, 0.329);
+}
+
+.selectWeather{
+  width: 500px;
+  font-size: 20px;
+  margin-top:100px;
+  z-index: 2;
+}
+
+.weatherDispaly{
+  border: 1px solid black;
+  padding: 10px 80px;
+  width: 900px;
+  margin: 0 auto;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+}
+.weatherToday{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.weatherIcon{
+  display: flex;
+  color: white;
+  font-size: 28px;
+  font-weight: bolder;
+  align-items: center;
+}
+.weatherIcon img{
+  width: 130px;
+}
+.weatherInfo{
+  color: white;
+  font-size: 18px;
+}
+.weatherFuture{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.modalContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.openForecast24{
+  width: 220px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  border: 1px solid aliceblue;
+  padding: 10px;
+  cursor: pointer;
+  transition: .6s;
+}
+.openForecast24:hover{
+  background-color: aliceblue;
+  color: black;
+}
+.modalHour{
+  background-color: rgb(194, 218, 233);
+  height: auto;
+  display: flex;
+  width: 700px;
+  font-size: 19px;
+  overflow-x: scroll;
+  padding: 18px 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: .6s;
+}
+.forecastHour{
+  margin: 0 10px;
+}
+.weatherHeader{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 30px;
+}
+.weatherHeader p{
+  margin-right: 10px;
+  font-weight: bold;
+}
+.weatherHeader span{
+  color: rgb(102, 100, 100);
+}
+.weatherDispaly::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.4); 
+   width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 30px;
+}
