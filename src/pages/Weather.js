@@ -6,9 +6,10 @@ import Select from 'react-select';
 import { weatherCities } from '../WeatherComponents/weatherData';
 
 const Weather = () => {
-    //  add 'weatherCities' bellow
+    //  add 'weatherCities' to object bellow... because limited API calls for searching
 
     const {inputChange,weatherData,change,query,loading}=useWeatherContext()
+    console.log(weatherData);
   return (
     <div className='weatherContainer'>   
          <Select className='selectWeather' value={query} options={weatherCities.length>0?weatherCities.map(x=>({label:x.name,value:x.id})):[]} onInputChange={inputChange} onChange={change}/> 

@@ -1,4 +1,5 @@
 import React, { useState,useContext } from "react";
+import axios from 'axios'
 
 const NewsContext=React.createContext()
 
@@ -7,20 +8,23 @@ const [news,setNews]=useState([])
 const [loading,setLoading]=useState(false)
 const [values,setValues]=useState({query:'nba',country:'us',category:"sports"})
 const {query,country,category}=values
+
 const fetchNews=async(url)=>{
+
     setLoading(true)
-    const response=await fetch(url)
-    const data=await response.json()
-    if(data.articles){
-        setNews(data.articles)
-        setLoading(false)
-    }
+    const response=await axios(url).catch((err)=>console.log(err))
+    const data=response.data
+        if(data.articles){    
+            setNews(data.articles)
+            setLoading(false)
+        } 
+    
 }
 const submitNews=(e)=>{
     e.preventDefault();
     fetchNews(`https://newsapi.org/v2/top-headlines?lang=us&q=${query}&country=${country}&category=${category}&apiKey=0e37967af86c4c1fbfbacd4bc72e4214`)
 }
-console.log();
+
 const change=(e)=>{
     const key=e.target.name
     const value=e.target.value

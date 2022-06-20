@@ -1,4 +1,5 @@
 import React, { useState,useContext, useEffect } from "react";
+import axios from 'axios'
 
 const QuizContext=React.createContext()
 
@@ -31,11 +32,13 @@ const QuizProvider=({children})=>{
         setSetup(true)
     }
     const fetchQuestions=async()=>{
+
         setEndQuiz(false)
         setLoading(true)
         setSetup(false)
-        const response=await fetch(`https://opentdb.com/api.php?amount=${values.number}&category=${categories[values.category]}&difficulty=${values.difficulty}&type=multiple`)
-        const data=await response.json()
+
+        const response=await axios(`https://opentdb.com/api.php?amount=${values.number}&category=${categories[values.category]}&difficulty=${values.difficulty}&type=multiple`).catch((err)=>console.log(err))
+        const data=response.data
         if(data.results){
             setQuestions(data.results)
             setLoading(false)
