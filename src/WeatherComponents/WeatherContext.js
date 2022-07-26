@@ -51,11 +51,11 @@ const WeatherProvider = ({children}) => {
     }
 
     useEffect(()=>{
-        fetchData(`http://api.weatherapi.com/v1/forecast.json?key=4e68fc2b74db4359bbc165739220206&q=${selected}&days=5&aqi=no&alerts=no`)
+        fetchData(`https://api.weatherapi.com/v1/forecast.json?key=4e68fc2b74db4359bbc165739220206&q=${selected}&days=5&aqi=no&alerts=no`)
     },[selected])
     
     useEffect(()=>{
-        fetchCities(`http://api.weatherapi.com/v1/search.json?key=4e68fc2b74db4359bbc165739220206&q=${query}`)
+        fetchCities(`https://api.weatherapi.com/v1/search.json?key=4e68fc2b74db4359bbc165739220206&q=${query}`)
         },[query])
 
   return (
