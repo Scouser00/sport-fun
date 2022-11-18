@@ -22,7 +22,7 @@ const fetchNews=async(url)=>{
 }
 const submitNews=(e)=>{
     e.preventDefault();
-    fetchNews(`https://newsapi.org/v2/top-headlines?lang=us&q=${query}&country=${country}&category=${category}&apiKey=0e37967af86c4c1fbfbacd4bc72e4214`)
+    fetchNews(`https://newsapi.org/v2/top-headlines?lang=us&q=${query}&country=${country}&category=${category}&apiKey=${procces.env.NEWS_APP_API_KEY}`)
 }
 
 const change=(e)=>{
